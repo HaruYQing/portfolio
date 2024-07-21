@@ -1,0 +1,49 @@
+#content-1 {
+    position: relative;
+}
+
+.swiper-container {
+    position: relative;
+    height: 337px;
+    width: 75vw;
+    overflow: hidden;
+    /* overflow-x: scroll; */
+    scroll-behavior: smooth;
+}
+
+.swiper-wrapper {
+    display: flex;
+    position: absolute;
+}
+
+#swipeButtonPrev,
+#swipeButtonNext {
+    /* cursor: pointer; */ /*如果改回span就要加*/
+    position: absolute;
+    border: none;
+    border-radius: 16px;
+    background: transparent;
+    padding: 0;
+    /* top: calc(50% - 25px); */
+    top: 55%;
+    left: 4vw;
+    opacity: 0.3;
+    transition-duration: 0.5s;
+    transition-property: opacity, scale;
+}
+
+#swipeButtonNext {
+    left: unset;
+    right: 4vw;
+}
+
+#swipeButtonPrev>img,
+#swipeButtonNext>img {
+    width: 40px;
+}
+
+#swipeButtonPrev:hover,
+#swipeButtonNext:hover {
+    opacity: 0.7;
+    scale: 1.1;
+}

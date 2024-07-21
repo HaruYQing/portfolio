@@ -1,0 +1,153 @@
+#goodArticles.row {
+  margin-left: 3rem;
+  margin-right: 0;
+  padding-left: 15rem;
+  gap: 0 8rem;
+}
+
+.article-card {
+  background-color: white;
+  margin: 2rem 0;
+  padding: 1.5rem 3rem;
+  /* width: 500px; 刪掉 */
+  height: 250px;
+  border-radius: 20px;
+  /* 调整宽度以适应间距 */
+  flex: 1 1 calc(50% - 12rem);
+  /* 确保最大宽度 */
+  max-width: calc(50% - 12rem);
+  /*上面這兩個要配合RWD更改*/
+
+  /*test*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* 垂直居中 */
+}
+
+.article-info,
+.card-link,
+.card-like {
+  margin: 5px 0; /* 使子元素之间有间距 */
+}
+
+/* .article-info {
+  border: 1px dotted red;
+} */
+
+.article-info > span {
+  /* border: 1px dotted gray; */
+  padding-right: 10%;
+  color: gray;
+  font-size: 14px;
+}
+
+.article-card > a {
+  text-decoration: none;
+  color: black;
+}
+
+.card-link > div {
+  height: 130px;
+  /* border: 1px dotted blue; */
+}
+
+.cardpic {
+  display: inline-block;
+  margin-left: auto;
+}
+
+.cardpic > img {
+  height: 120px;
+}
+
+.article-card-body {
+  display: inline-block;
+  height: 130px;
+  width: 240px;
+  margin-right: auto;
+  /* border: 3px solid yellow; */
+}
+
+.article-card-title {
+  font-weight: 600;
+}
+
+.article-inside {
+  /*顯示兩行*/
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /*----*/
+  color: gray;
+}
+
+/*hover效果*/
+.article-card:hover {
+  /* transform: scale(1.02); */
+  opacity: 0.8;
+  box-shadow: 0px 0px 18px 2px rgba(134, 134, 134, 0.85);
+}
+
+/*hover效果時間*/
+#content-3 .article-card {
+  transition-duration: 0.5s;
+  transition-property: all;
+}
+
+.card-like {
+  display: flex;
+}
+
+/* .card-like > div {
+  border: 1px dotted green;
+} */
+
+.card-like > div:not(:last-child) {
+  padding: 5px 8px;
+  background-color: rgba(226, 226, 226, 0.6);
+  border-radius: 20px;
+  font-size: 14px;
+  color: rgb(101, 101, 101);
+  cursor: pointer;
+  /*hover*/
+  transition-duration: 0.2s;
+  transition-property: all;
+}
+
+/*hover效果*/
+.card-like > div:not(:last-child):hover {
+  background-color: rgba(186, 221, 230, 0.5);
+  color: black;
+  font-weight: 600;
+}
+
+.card-like > div:first-child {
+  margin-right: 6px;
+}
+
+.card-like > div:last-child {
+  color: #ffb909;
+  font-size: 22px;
+  padding: 0 5px;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.card-like > div span {
+  color: rgb(44, 172, 201);
+  font-weight: 500;
+}
+
+#rwd_c {
+  display: none;
+  text-decoration: none;
+  text-align: end;
+  color: gray;
+}
+
+#rwd_c:hover {
+  color: black;
+  text-decoration: underline;
+}

@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>創業必備：前端網頁設計入門 | Dr. Cloud 雲博士</title>
+
+    <!--設定 favicon-->
+    <link rel="icon" href="./img/favicon.png">
+
+    <!--CDN引用bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+
+    <!--CDN引用bootstrap icon-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- <style>
+        main {
+            margin-left: 15%;
+            margin-right: 15%;
+        }
+    </style> -->
+
+    <!-- secondary-header -->
+    <style>
+        .secondary-header {
+            /* border: 1px solid red;
+            box-sizing: border-box; */
+            /**/
+            margin-top: 80px;
+            margin-left: 15%;
+            margin-right: 15%;
+        }
+
+        .secondH-root {
+            /* border: 1px dotted gray;
+            box-sizing: border-box; */
+            /**/
+            margin-right: auto;
+            display: flex;
+            align-items: center;
+        }
+
+        .secondH-root>a,
+        .secondH-root>span {
+            color: rgb(172, 172, 172);
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .secondH-root>a:hover {
+            color: rgb(99, 99, 99);
+            text-decoration: underline;
+            font-size: 14px;
+        }
+
+        .secondH-share {
+            /* border: 1px dotted gray;
+            box-sizing: border-box; */
+            /**/
+            margin-left: auto;
+        }
+
+        .secondH-share>a {
+            /* background-color: rgba(223, 223, 223, 0.6);
+            clip-path: circle(50% at 50% 50%);
+            padding: 6px 10px; */
+            margin-right: 3px;
+            display: inline-block;
+        }
+
+        .secondH-share>a:hover {
+            opacity: 0.7;
+        }
+
+        .secondH-share>a>i {
+            color: rgba(0, 0, 0, 0.5);
+            font-size: 22px;
+        }
+    </style>
+
+    <!-- class-intro -->
+    <style>
+        .class-intro {
+            /* border: 1px solid red;
+            box-sizing: border-box; */
+            /**/
+            display: flex;
+            margin: 1% 15% 5% 15%;
+        }
+
+        .class-intro-video {
+            /* border: 1px dotted green; */
+            box-sizing: border-box;
+            /**/
+            align-self: center;
+            padding: 0;
+            padding-right: 3%;
+        }
+
+        .class-intro-video>iframe {
+            width: 100%;
+            height: 50vh;
+        }
+
+        .class-intro-text {
+            /* border: 1px solid blue; */
+            box-sizing: border-box;
+            /**/
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+
+        .class-intro-text>div {
+            /* border: 1px dotted orange; */
+            box-sizing: border-box;
+            /**/
+        }
+
+        .intro-text-teacher {
+            display: flex;
+            align-items: center;
+        }
+
+        .circle-img {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 8px;
+        }
+
+        .circle-img>img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+
+        .intro-text-teacher>span:nth-child(2) {
+            font-size: 14px;
+        }
+
+        .intro-text-title>h1 {
+            font-weight: bolder;
+        }
+
+        .intro-text-summary {
+            color: gray;
+        }
+
+        .intro-text-sold>i {
+            color: #0076bb;
+        }
+
+        .intro-text-sold>span {
+            font-size: 14px;
+        }
+
+        .intro-text-more {
+            display: flex;
+        }
+
+        .text-more-rate>span {
+            font-size: 14px;
+        }
+
+        .text-more-rate>span:first-child {
+            font-size: 16px;
+        }
+
+        .text-more-rate>span:last-child {
+            color: gray;
+        }
+
+        .text-more-rate>span>i {
+            color: #ffb909;
+        }
+
+        .text-more-btn {
+            margin-left: auto;
+        }
+
+        .text-more-btn>button {
+            border: 2px solid rgba(0, 118, 187, 0.3);
+            border-radius: 5px;
+            background-color: transparent;
+            font-size: 14px;
+            color: #0076bb;
+            padding: 4px 6px;
+        }
+    </style>
+
+    <!-- class-detail -->
+    <style>
+        .class-detail {
+            background-color: #E8E8E8;
+            padding: 3% 15%;
+        }
+
+        .class-detail>div {
+            /* border: 2px dotted blue;
+            box-sizing: border-box; */
+            /**/
+            top: 0;
+        }
+
+        .class-detail-left {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 50px 0;
+        }
+
+        .class-detail-left h4 {
+            font-weight: bold;
+        }
+
+        .left-about-short {
+            margin-bottom: 50px;
+        }
+
+        .about-short-inner {
+            margin-bottom: 10px;
+        }
+
+        .about-short-inner img {
+            width: 100%;
+            margin-left: 10px;
+
+        }
+
+        .about-short-inner>.col-10 {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .about-short-inner>.col-10>span:first-child {
+            font-size: 14px;
+            color: rgb(105, 105, 105);
+        }
+
+
+        .left-about-content {
+            background-color: white;
+            border-radius: 10px;
+            margin: 0;
+            padding: 3%;
+        }
+
+        .left-unit-accordion {
+            margin-bottom: 50px;
+        }
+
+        .left-class-chapter>div {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .left-class-chapter>div>div {
+            display: flex;
+            padding: 15px 5px;
+        }
+
+        .left-class-chapter>div>div:hover {
+            background-color: rgba(222, 221, 221, 0.8);
+        }
+
+        .left-class-chapter>div>div>span {
+            display: inline-block;
+        }
+
+        .left-class-chapter>div>div>span:first-child {
+            color: #0076bb;
+            margin-right: 10px;
+        }
+
+        .unit-time {
+            color: gray;
+            margin-left: auto;
+            font-size: 12px;
+        }
+
+        .trial-btn+span {
+            margin-left: 10px;
+        }
+
+        .trial-btn {
+            display: inline-block;
+            margin-left: auto;
+            font-size: 14px;
+            border: none;
+            background-color: #0076bb;
+            color: white;
+        }
+
+        .more-q {
+            display: inline-block;
+            text-decoration: none;
+            color: gray;
+            font-size: 12px;
+            margin-left: auto;
+        }
+
+        #trial-video-1,
+        #trial-video-2 {
+            width: 95%;
+            height: 25vh;
+        }
+
+        /***********************************/
+
+        .class-detail-right {
+            position: relative;
+            padding-left: 3%;
+            padding-right: 3%;
+        }
+
+        .class-buy {
+            display: flex;
+            flex-direction: column;
+            background-color: white;
+            padding: 5% 10%;
+            border-radius: 10px;
+            position: sticky;
+            top: 96px;
+        }
+
+        .class-buy>span {
+            /* border: 2px dotted gray;
+            box-sizing: border-box; */
+            /**/
+            display: inline-block;
+        }
+
+        .class-buy>span:first-child {
+            font-weight: bold;
+        }
+
+        .class-buy>span:nth-child(3) {
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .class-buy>span:nth-child(4) {
+            margin-bottom: 5%;
+        }
+
+        .class-buy>span:nth-child(4)>a {
+            font-size: 14px;
+            text-decoration: none;
+            color: #d09809a8;
+        }
+
+        .class-buy>span:nth-child(4)>a:hover {
+            text-decoration: underline;
+            color: #d09809;
+        }
+
+        .class-buy>span:nth-child(4)>i {
+            color: #0076bb;
+        }
+
+        .class-buy>span:nth-child(5) {
+            display: flex;
+        }
+
+        .class-buy>span:nth-child(5)>button:first-child {
+            border: 2px solid #0076bb;
+            border-radius: 6px;
+            background-color: #0076bb;
+            color: white;
+            padding: 2% 22%;
+            transition-duration: 0.3s;
+        }
+
+        .class-buy>span:nth-child(5)>button:first-child:hover {
+            border: 2px solid #005d93;
+            background-color: #005d93;
+        }
+
+        .class-buy>span:nth-child(5)>button:last-child {
+            border: 2px solid rgba(0, 118, 187, 0.4);
+            border-radius: 6px;
+            background-color: transparent;
+            color: #0076bb;
+            font-size: 24px;
+            padding: 2% 4%;
+            margin-left: 8px;
+            transition-duration: 0.3s;
+        }
+
+        .class-buy>span:nth-child(5)>button:last-child:hover {
+            border: 2px solid #005d93;
+        }
+    </style>
+
+
+    <link rel="stylesheet" href="./navbar.css">
+    <link rel="stylesheet" href="./footer.css">
+</head>
+
+<body>
+    <!-- https://hahow.in/courses/56c1e3b3e91d590900234105 -->
+
+    <nav class="navBar fixed-top">
+        <!--背景顏色在這裡改的-->
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand mx-3 px-3" id="navbarLogo" href="index.html">
+                    <img src="./img/logo-navBar.png" alt="Dr. Cloud LOGO" height="24"
+                        class="d-inline-block align-text-top">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex">
+                        <li class="nav-item dropdown">
+                            <!--我的收折式選單，待擴充、待改變方向-->
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                探索
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">語言</a></li>
+                                <li><a class="dropdown-item" href="#">程式</a></li>
+                                <li><a class="dropdown-item" href="#">設計</a></li>
+                                <li><a class="dropdown-item" href="#">行銷</a></li>
+                                <li><a class="dropdown-item" href="#">手作</a></li>
+                                <li><a class="dropdown-item" href="#">攝影</a></li>
+                                <li><a class="dropdown-item" href="#">人文</a></li>
+                                <li><a class="dropdown-item" href="#">音樂</a></li>
+                                <li><a class="dropdown-item" href="#">藝術</a></li>
+                                <li><a class="dropdown-item" href="#">職場技能</a></li>
+                                <li><a class="dropdown-item" href="#">投資理財</a></li>
+                                <li><a class="dropdown-item" href="#">生活品味</a></li>
+                            </ul>
+                        </li>
+
+                        <!--搜尋欄跟搜尋按鈕在這裡-->
+                        <form class="d-flex">
+                            <!--想把搜尋欄變寬、放在導覽列中間，尚未成功-->
+                            <input class="form-control me-2" type="search" placeholder="關鍵字：Python、商用日語、編織、莫彩曦..."
+                                aria-label="Search" style="margin-left: 5rem;">
+                            <!--用 .text-nowrap 解決把 "search" 改成中文 "搜尋" 會換行的問題-->
+                            <button class="btn btn-md btn-outline-secondary text-nowrap px-3" type="submit"> 搜尋
+                            </button>
+                        </form>
+                    </ul>
+
+                    <!--右側購物車和登入/註冊-->
+                    <ul class="navbar-nav mb-2 mb-lg-0">
+                        <li>
+                            <button style="border: none; background: none; height: 100%;" data-bs-toggle="modal"
+                                data-bs-target="#shoppingCart">
+                                <img id="navbarSC" src="./img/cart.svg" class="me-2 p-2" style="height: 40px;">
+                            </button>
+                        </li>
+                        <li>
+                            <button style="border: none; background: none; height: 100%;" data-bs-toggle="modal"
+                                data-bs-target="#signupLogin">
+                                <img id="navbarLI" src="./img/person-circle.svg" class="me-4 p-2" style="height: 40px">
+                            </button>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+    </nav>
+    <!-- 購物車Modal -->
+    <div class="modal fade" id="shoppingCart" tabindex="-1" aria-labelledby="shoppingCartLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="shoppingCartLabel">購物車</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    購物車內容
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">繼續逛逛</button>
+                    <button type="button" class="btn btn-primary">結帳</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 註冊登入Modal -->
+    <div class="modal fade" id="signupLogin" tabindex="-1" aria-labelledby="signupLoginLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <!-- <h1 class="modal-title fs-5" id="shoppingCartLabel">註冊/登入</h1> -->
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="signUp-tab" data-bs-toggle="tab"
+                                data-bs-target="#signUp-tab-pane" type="button" role="tab"
+                                aria-controls="signUp-tab-pane" aria-selected="true">註冊</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="logIn-tab" data-bs-toggle="tab"
+                                data-bs-target="#logIn-tab-pane" type="button" role="tab" aria-controls="logIn-tab-pane"
+                                aria-selected="false">登入</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="signUp-tab-pane" role="tabpanel"
+                            aria-labelledby="signUp-tab" tabindex="0">
+                            <!--還是參考著 BS 做吧-->
+                            <form class="mx-3 my-4 was-validated" action="">
+                                <div class="mb-3">
+                                    <label for="signUpEmail" class="form-label">電子信箱 (做為日後登入帳號)</label>
+                                    <input type="email" class="form-control" id="signUpEmail"
+                                        placeholder="name@example.com" required>
+                                </div>
+                                <div class="mb-1">
+                                    <label for="signUpPassword" class="form-label">設定密碼</label>
+                                    <input type="password" id="signUpPassword" class="form-control"
+                                        aria-describedby="passwordHelpBlock" required minlength="8" maxlength="20"
+                                        oninput="checkSignUpPW()">
+                                    <div id="passwordHelpBlock" class="form-text">
+                                        密碼長度須為 8-20 個字 <!--，應包含英文字母與數字-->
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="password" id="passwordConfirm" class="form-control"
+                                        aria-describedby="passwordHelpBlock" required oninput="checkSignUpPW()">
+                                    <div id="pwConfirmBlock" class="form-text">
+                                        請輸入與上列相同密碼
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="d-flex justify-content-end">
+                                    <input class="btn btn-secondary me-2" type="reset" value="清除重填" name="" id="">
+                                    <input class="btn btn-primary" type="submit" value="確認送出" name="" id="">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="tab-pane fade" id="logIn-tab-pane" role="tabpanel" aria-labelledby="logIn-tab"
+                            tabindex="0">
+                            <form class="mx-3 my-4" action="">
+                                <div class="mb-3">
+                                    <label for="logInEmail" class="form-label">帳號 (註冊時的電子信箱)</label>
+                                    <input type="email" class="form-control" id="logInEmail"
+                                        placeholder="name@example.com" required>
+                                </div>
+                                <div class="mb-1">
+                                    <label for="logInPassword" class="form-label">設定密碼</label>
+                                    <input type="password" id="logInPassword" class="form-control" required
+                                        minlength="8" maxlength="20">
+                                    <a class="link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
+                                        href="#">忘記密碼？</a>
+                                </div>
+                                <hr>
+                                <div class="d-flex justify-content-end">
+                                    <input class="btn btn-primary" type="submit" value=" 登入 " name="" id="">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <!--頁首：路徑、分享按鈕-->
+        <div class="secondary-header d-flex">
+            <div class="secondH-root">
+                <a href="#">所有課程</a><span>></span>
+                <a href="#">程式</a><span>></span>
+                <a href="#">程式入門</a>
+            </div>
+            <div class="secondH-share">
+                <a href="#"><i class="bi bi-link-45deg"></i></a>
+                <a href="#"><i class="bi bi-facebook"></i></a>
+                <a href="#"><i class="bi bi-line"></i></a>
+            </div>
+        </div>
+
+        <!-- 介紹影片、課程簡介 -->
+        <div class="class-intro row">
+            <div class="class-intro-video col-lg-7">
+                <iframe src="https://www.youtube.com/embed/rBpxheE4iDs" title="【程式課程】創業必備：前端網頁設計入門" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="class-intro-text col-lg-5">
+                <div class="intro-text-teacher">
+                    <span class="circle-img">
+                        <img src="./img/teacher.jpg">
+                    </span>
+                    <span>Jeremy Yen</span>
+                </div>
+                <div class="intro-text-title">
+                    <h1>創業必備：前端網頁設計入門</h1>
+                    <p class="intro-text-summary">
+                        網頁前端設計課程，學習 HTML、CSS、JavaScript、jQuery 等網頁前端設計必備技能，
+                        暸解網站的運作原理，作為轉職或創業的加分技能，設計出理想中的 landing page。
+                    </p>
+                </div>
+                <div class="intro-text-sold">
+                    <i class="bi bi-handbag-fill"></i>
+                    <span>1,131人已購買</span>
+                </div>
+                <div class="intro-text-more">
+                    <div class="text-more-rate">
+                        <span>4.5</span>
+                        <span>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-half"></i>
+                        </span>
+                        <span>(67)</span>
+                    </div>
+                    <div class="text-more-btn">
+                        <button class="more-btn-collect">
+                            <i class="bi bi-bookmark"></i>
+                            收藏課程
+                        </button>
+                        <button class="more-btn-gift">
+                            <i class="bi bi-gift"></i>
+                            贈送禮物
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 課程詳細：
+            購買[sticky右側]、關於課程(課程內容)、單元一覽(課程試看?)、課程評價、關於講師? -->
+        <div class="class-detail row">
+            <div class="class-detail-left col-lg-8 row">
+                <div class="detail-left-about">
+                    <h4>關於課程</h4>
+                    <div class="left-about-short row">
+                        <div class="about-short-inner col-lg-6 row">
+                            <div class="col-2">
+                                <img src="./img/intro-time.png">
+                            </div>
+                            <div class="col-10">
+                                <span>課程時長</span>
+                                <span>4小時 6分鐘</span>
+                            </div>
+                        </div>
+                        <div class="about-short-inner col-lg-6 row">
+                            <div class="col-2">
+                                <img src="./img/intro-student.png">
+                            </div>
+                            <div class="col-10">
+                                <span>課程總人數</span>
+                                <span>1131位同學</span>
+                            </div>
+                        </div>
+                        <div class="about-short-inner col-lg-6 row">
+                            <div class="col-2">
+                                <img src="./img/intro-limit.png">
+                            </div>
+                            <div class="col-10">
+                                <span>觀看限制</span>
+                                <span>不限觀看次數，還會附贈完課證書</span>
+                            </div>
+                        </div>
+                        <div class="about-short-inner col-lg-6 row">
+                            <div class="col-2">
+                                <img src="./img/intro-unit.png">
+                            </div>
+                            <div class="col-10">
+                                <span>單元數</span>
+                                <span>1章節 12單元</span>
+                            </div>
+                        </div>
+                        <div class="about-short-inner col-lg-6 row">
+                            <div class="col-2">
+                                <img src="./img/intro-homework.png">
+                            </div>
+                            <div class="col-10">
+                                <span>作業數</span>
+                                <span>1份作業</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="left-about-content">
+                        <h5>課程內容</h5>
+                        <br>
+                        <div>
+                            <h3>完全針對初學者的前端網頁課程！</h3>
+                            <hr>
+                            <p>
+                                後端要處理的技術已經夠多了，為什麼還要學習前端呢？
+                                <br><br>
+                                本課程注重以「程式設計邏輯」講解前端網頁。幫助後端網頁工程師快速掌握前端技術，充分配合後端的需要（如 AJAX 及網頁 CSS 微調）設計前端網站。
+                                <br><br>
+                                好的設計師難找，後端工作中常常遇到前後端需同時處理的情況。此時，掌握基本前端技術是一大助力！
+                            </p>
+                            <br>
+                            <br>
+
+                            <h3>為什麼要學習前端網頁設計？</h3>
+                            <hr>
+                            <p>
+                                奇怪，架設網站明明就不難，Blogger、wix、weebly 點一點就架好了，為什麼要學習前端網頁設計呢？
+                                <br><br>
+                                請試著想想看，Dr. Cloud（您現在上的這個網站）到底是用 Blogger 還是用 wix
+                                架設的呢？如果您單純只是要一個網站，而不在意網站是如何撰寫、如何運作的，
+                                那可以參考課程「自己的個人網站自己架」。如果您有意願成為網頁前後端工程師、
+                                甚至希望在未來進入網頁相關產業工作的人，那本課程絕對是您不可錯過的一堂基礎課。
+                            </p>
+                            <br>
+                            <br>
+
+                            <h3>網頁設計跟創業有什麼關係？</h3>
+                            <hr>
+                            <p>
+                                相較於在大企業中工作，面對的是維護複雜的既有系統或網站。創業則大多是從零開始，
+                                使用有限的資源實際做出一個產品原型(Prototype)。而本課程的重點，
+                                正是希望同學能從零開始撰寫網頁，同時學習發布(Publish)網站，瞭解並熟悉網站運作的概念。
+                            </p>
+                            <br>
+                            <br>
+
+                            <h3>關於 Jeremy 及上課方式</h3>
+                            <hr>
+                            <p>
+                                1994 年生，從小對程式設計有極大興趣
+                                <br><br>
+                                高二時擔任資訊研究社社長，為了建構社團網站而開始學習前後端網頁設計。同時帶領社團教學團隊編印講義，教授高一學弟妹 VB, C++, HTML
+                                等基礎程式設計，擁有豐富初學者教學經驗，清楚了解初學的學習程式的盲點。
+                                <br><br>
+                                大學時曾承包學校資訊系統外包案，與系所和行政單位持續合作。深入瞭解其需求並將系統盡善盡美。大三時在中小企業實習十個月，負責產品前後端網頁的開發、部署、維護，曾開發售價百萬的內部企業資訊安全系統前後端介面。
+                                <br><br>
+                                Jeremy 的作品集：<a href="http://patricks.tw" target="_blank">http://patricks.tw</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="detail-left-unit">
+                    <h4>單元一覽</h4>
+                    <div class="left-unit-accordion accordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                                    aria-controls="panelsStayOpen-collapseOne">
+                                    本課程不分章節
+                                </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+                                <div class="left-class-chapter accordion-body">
+                                    <div>
+                                        <div>
+                                            <span>01</span>
+                                            <span>什麼是前端語言？我該學什麼語言</span>
+                                            <button class="trial-btn">試看單元</button>
+                                            <span class="unit-time">09:11</span>
+                                        </div>
+                                        <div>
+                                            <span>02</span>
+                                            <span>什麼是後端語言？網站是怎麼運作的？</span>
+                                            <button class="trial-btn">試看單元</button>
+                                            <span class="unit-time">14:04</span>
+                                        </div>
+                                        <div>
+                                            <span>03</span>
+                                            <span>開始撰寫網頁：HTML - 基礎元件的使用</span>
+                                            <span class="unit-time">20:06</span>
+                                        </div>
+                                        <div>
+                                            <span>04</span>
+                                            <span>開始撰寫網頁：HTML - 表單、表格、Class、ID</span>
+                                            <span class="unit-time">17:21</span>
+                                        </div>
+                                        <div>
+                                            <span>05</span>
+                                            <span>美化網頁：CSS - 選擇棄、顏色長度位置設定、除錯技巧</span>
+                                            <span class="unit-time">16:13</span>
+                                        </div>
+                                        <div>
+                                            <span>06</span>
+                                            <span>參考外部CSS：Bootstrap - Grid 排版、配色系統、RWD 基礎</span>
+                                            <span class="unit-time">21:01</span>
+                                        </div>
+                                        <div>
+                                            <span>07</span>
+                                            <span>使用者體驗：Javascript - 語法入門、物件、陣列、JSON、除錯技巧</span>
+                                            <span class="unit-time">27:53</span>
+                                        </div>
+                                        <div>
+                                            <span>08</span>
+                                            <span>參考外部JS：jQuery - 選擇棄、DOM 操作、事件監聽</span>
+                                            <span class="unit-time">23:55</span>
+                                        </div>
+                                        <div>
+                                            <span>09</span>
+                                            <span>團隊合作必備版本控制工具：git</span>
+                                            <span class="unit-time">16:33</span>
+                                        </div>
+                                        <div>
+                                            <span>10</span>
+                                            <span>使用 Github pages 免費空間架設第一個網站</span>
+                                            <span class="unit-time">20:32</span>
+                                        </div>
+                                        <div>
+                                            <span>11</span>
+                                            <span>動手做：BMI 計算器（含 RWD 及 Bootstrap 技巧）</span>
+                                            <span class="unit-time">32:03</span>
+                                        </div>
+                                        <div>
+                                            <span>12</span>
+                                            <span>動手做：網站後台儀表板（含 Bootstrap 應用及 Highchart）</span>
+                                            <span class="unit-time">26:48</span>
+                                        </div>
+                                        <div>
+                                            <span><i class="bi bi-file-earmark-text"></i></span>
+                                            <span>單元 11 延伸：體脂率計算器</span>
+                                            <a class="more-q" href="#">查看題目</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="left-unit-trial">
+                        <h5>課程試看</h5>
+                        <div class="unit-trial-video row">
+                            <div class="col-lg-6">
+                                <iframe id="trial-video-1" src="https://www.youtube.com/embed/rBpxheE4iDs"
+                                    title="【程式課程】創業必備：前端網頁設計入門" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                            <div class="col-lg-6">
+                                <iframe id="trial-video-2" src="https://www.youtube.com/embed/rBpxheE4iDs"
+                                    title="【程式課程】創業必備：前端網頁設計入門" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="detail-left-comment">
+                    <h4>課程評價</h4>
+                </div> -->
+            </div>
+            <div class="class-detail-right col-lg-4">
+                <div class="class-buy">
+                    <span>購買單堂課</span>
+                    <hr>
+                    <span>NT$500</span>
+                    <span>
+                        <i class="bi bi-tag-fill"></i>
+                        <a href="#">有什麼優惠可以用？</a>
+                    </span>
+                    <span>
+                        <button>立即購買</button>
+                        <button><i class="bi bi-cart"></i></button>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- 最多到【關於講師】就好 -->
+    </main>
+
+
+
+    <!--FOOTER -->
+    <footer>
+        <div id="myFooter" class="row">
+            <div class="col-lg-3 col-sm-12 col-xs-12">
+                <a id="footerLogoLink" href="./index.html">
+                    <img id="footerLogo" src="./logo0430_darkbackground.png"><br>
+                </a>
+            </div>
+
+            <div class="col-lg-2 col-sm-4 col-xs-12" id="footerCatogory">
+                <h5>類別</h5>
+                <a href="#">語言</a><br>
+                <a href="#">程式</a><br>
+                <a href="#">設計</a><br>
+                <a href="#">行銷</a><br>
+                <a href="#">手作</a><br>
+                <a href="#">攝影</a><br>
+                <a href="#">人文</a><br>
+                <a href="#">音樂</a><br>
+                <a href="#">藝術</a><br>
+                <a href="#">職場技能</a><br>
+                <a href="#">投資理財</a><br>
+                <a href="#">生活品味</a>
+            </div>
+
+            <div class="col-lg-2 col-sm-4 col-xs-12">
+                <h5>幫助</h5>
+                <a href="#">網站地圖</a><br>
+                <a href="#">課程許願</a><br>
+                <a href="./QA.html" target="_blank">常見問題</a><br>
+                <a href="#">聯絡我們</a><br>
+                <a href="#">徵才資訊</a><br>
+                <a href="#">合作洽談</a>
+            </div>
+
+            <div class="col-lg-2 col-sm-4 col-xs-12">
+                <h5>關於</h5>
+                <a href="#">關於我們</a><br>
+                <a href="#">校園方案</a><br>
+                <a href="#">服務契約</a><br>
+                <a href="#">版權資訊</a><br>
+                <a href="#">使用者條款</a><br>
+                <a href="#">隱私權政策</a>
+            </div>
+
+            <div class="col-lg-3 col-sm-12 col-xs-12">
+                <div id="snsIcon">
+                    <h5>社群</h5>
+                    <a href="#"><i id="ytIcon" class="bi bi-youtube"
+                            style="font-size: 24px; color: rgba(255, 255, 255, 0.8);" onmouseover="ytIconHover()"
+                            onmouseleave="ytIconNotHover()"></i></a>
+                    <a href="#"><i id="igIcon" class="bi bi-instagram"
+                            style="font-size: 24px; color: rgba(255, 255, 255, 0.8);" onmouseover="igIconHover()"
+                            onmouseleave="igIconNotHover()"></i></a>
+                    <a href="#"><i id="fbIcon" class="bi bi-facebook"
+                            style="font-size: 24px; color: rgba(255, 255, 255, 0.8);" onmouseover="fbIconHover()"
+                            onmouseleave="fbIconNotHover()"></i></a>
+                    <a href="#"><i id="lineIcon" class="bi bi-line"
+                            style="font-size: 24px; color: rgba(255, 255, 255, 0.8);" onmouseover="lineIconHover()"
+                            onmouseleave="lineIconNotHover()"></i></a>
+                </div>
+                <br>
+                <div id="apps">
+                    <h5>APP下載</h5>
+                    <a href="#" target="_blank"><img src="./img/app-store-badge.svg"></a>
+                    <br>
+                    <a href="#" target="_blank"><img src="./img/google-play-badge.png"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+<script>
+
+</script>
+
+</html>

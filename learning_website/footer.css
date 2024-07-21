@@ -1,0 +1,37 @@
+#myFooter {
+  background-color: #003d61;
+  padding: 80px 0px;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+#myFooter > div {
+  padding-left: 5%;
+}
+
+#footerLogo {
+  width: 90%;
+  padding: 5px;
+}
+
+#myFooter h5 {
+  color: #ffb909;
+}
+
+#myFooter a {
+  text-decoration: none;
+  color: white;
+}
+
+#myFooter a:hover {
+  font-weight: bolder;
+}
+
+#snsIcon > a {
+  padding-right: 5px;
+}
+
+#apps img {
+  width: 140px;
+  margin-bottom: 10px;
+}
