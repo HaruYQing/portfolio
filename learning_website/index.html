@@ -544,6 +544,7 @@
 
       .article-inside {
         -webkit-line-clamp: 1;
+        line-clamp: 1;
       }
 
       .article-card-body>h5 {
@@ -777,9 +778,9 @@
           </li>
 
           <!--搜尋欄跟搜尋按鈕在這裡-->
-          <form class="d-flex">
+          <form class="d-flex" style="width: 50rem;">
             <!--想把搜尋欄變寬、放在導覽列中間，尚未成功-->
-            <input class="form-control me-2" type="search" placeholder="關鍵字：Python、商用日語、編織、莫彩曦..." aria-label="Search" style="margin-left: 5rem;">
+            <input class="form-control me-2" type="search" placeholder="關鍵字：Python、商用日語、編織、莫彩曦..." aria-label="Search" style="margin-left: 5rem; display: inline-block; width: 100%;">
             <!--用 .text-nowrap 解決把 "search" 改成中文 "搜尋" 會換行的問題-->
             <button class="btn btn-md btn-outline-secondary text-nowrap px-3" type="submit"> 搜尋
             </button>
