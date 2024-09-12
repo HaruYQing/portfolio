@@ -330,6 +330,40 @@ main section.articles div.arti-container div.article-card a {
   text-decoration: none;
   color: #000000;
 }
+main section.join-us {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-image: url(../img/content4-25.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+main section.join-us div.text {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main section.join-us div.text a {
+  text-decoration: none;
+  color: #08639c;
+  font-weight: bold;
+  font-size: 6rem;
+  transition: all 0.3s ease-in-out;
+}
+main section.join-us div.text a:hover {
+  transform: scale(1.1);
+  text-decoration: underline;
+  text-underline-offset: 2rem;
+  text-decoration-color: orange;
+}
+main section.join-us div.image {
+  padding: 1rem;
+}
+main section.join-us div.image img {
+  width: 50vw;
+  border-radius: 100px 0 100px 0;
+}
 
 footer {
   background-color: #003d61;
@@ -343,7 +377,6 @@ footer {
 }
 footer h5 {
   font-size: large;
-  font-weight: bold;
   color: orange;
   margin-bottom: 0.5rem;
 }

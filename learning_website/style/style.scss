@@ -371,6 +371,44 @@ main {
       }
     }
   }
+
+  // to-do: RWD
+  section.join-us {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-image: url(../img/content4-25.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    div.text {
+      // border: 2px solid green;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      a {
+        text-decoration: none;
+        color: #08639c;
+        font-weight: bold;
+        font-size: 6rem;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+          transform: scale(1.1);
+          text-decoration: underline;
+          text-underline-offset: 2rem;
+          text-decoration-color: orange;
+        }
+      }
+    }
+    div.image {
+      // border: 2px solid orange;
+      padding: 1rem;
+      img {
+        width: 50vw;
+        border-radius: 100px 0 100px 0;
+      }
+    }
+  }
 }
 
 footer {
@@ -383,7 +421,6 @@ footer {
   grid-template-columns: 1.5fr 3fr 1.5fr;
   h5 {
     font-size: large;
-    font-weight: bold;
     color: orange;
     margin-bottom: 0.5rem;
   }
