@@ -105,6 +105,24 @@ main section.slideshow div.mySlides img {
   max-width: 100%;
   height: auto;
 }
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  main section.slideshow div.mySlides div.filter h3 {
+    bottom: 12rem;
+  }
+}
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  main section.slideshow div.mySlides div.filter h3 {
+    font-size: 2rem;
+    bottom: 8rem;
+  }
+}
+@media screen and (max-width: 576px) {
+  main section.slideshow div.mySlides div.filter h3 {
+    font-size: 1.4rem;
+    bottom: 5rem;
+    right: 3rem;
+  }
+}
 main .content-title {
   font-size: 1.5rem;
   padding-left: 0.5rem;
@@ -112,6 +130,16 @@ main .content-title {
 }
 main .sec-container {
   padding: 3rem 5rem;
+}
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  main .sec-container {
+    padding: 3rem 2rem;
+  }
+}
+@media screen and (max-width: 576px) {
+  main .sec-container {
+    padding: 3rem 0rem;
+  }
 }
 main section.popular {
   position: relative;
@@ -288,6 +316,8 @@ main section.categories div.cate-container div.twelveCategory a div img {
   main section.categories div.cate-container div.twelveCategory {
     grid-template: repeat(4, 1fr)/repeat(3, 1fr);
     margin: auto;
+    -moz-column-gap: 1rem;
+         column-gap: 1rem;
   }
 }
 @media screen and (max-width: 576px) {
