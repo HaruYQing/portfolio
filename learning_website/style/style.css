@@ -439,6 +439,60 @@ main section.join-us div.image img {
   width: 45vw;
   border-radius: 100px 0 100px 0;
 }
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+  main section.join-us div.text a {
+    font-size: 5rem;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  main section.join-us div.text a {
+    font-size: 4rem;
+  }
+}
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  main section.join-us {
+    grid-template-columns: unset;
+    grid-template-rows: 1fr 0.8fr;
+    grid-template-areas: "joinImg" "joinText";
+  }
+  main section.join-us div.text {
+    grid-area: joinText;
+  }
+  main section.join-us div.text a {
+    font-size: 4rem;
+  }
+  main section.join-us div.image {
+    grid-area: joinImg;
+    display: flex;
+  }
+  main section.join-us div.image img {
+    width: 85vw;
+    border-radius: 100px 0 100px 0;
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 576px) {
+  main section.join-us {
+    grid-template-columns: unset;
+    grid-template-rows: 1fr 0.8fr;
+    grid-template-areas: "joinImg" "joinText";
+  }
+  main section.join-us div.text {
+    grid-area: joinText;
+  }
+  main section.join-us div.text a {
+    font-size: 3rem;
+  }
+  main section.join-us div.image {
+    grid-area: joinImg;
+    display: flex;
+  }
+  main section.join-us div.image img {
+    width: 85vw;
+    border-radius: 100px 0 100px 0;
+    margin: 0 auto;
+  }
+}
 
 footer {
   background-color: #003d61;
